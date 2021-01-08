@@ -134,10 +134,26 @@ def num_points_scored(name)
   
   def get_home_points
     sum = 0
+    
     game_hash[:home][:players].each do |stats|
       sum += stats[:points]
     end
+    
+    return sum
+  end
+  
+  def get_away_points
+    sum = 0
+    
+    game_hash[:away][:players].each do |stats|
+      sum += stats[:points]
+    end
+    
     return sum
   end
   get_home_points
+  get_away_points
+  
+  total_points = get_home_points + get_away_points
+  return total_points
 end
