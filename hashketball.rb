@@ -198,7 +198,7 @@ def big_shoe_rebounds
     value[:players].each do |stats|
       shoe_size = 0
       stats[:shoe] += shoe_size
-      if stats[:shoe] > shoe_size]
+      if stats[:shoe] > shoe_size
         binding.pry
         rebounds = stats[:rebounds]
       end
