@@ -204,7 +204,7 @@ def big_shoe_rebounds
   end
   print biggest_shoe_size
   binding.pry
-  return rebounds
+  print rebounds
 end
 
 
