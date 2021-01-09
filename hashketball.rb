@@ -174,7 +174,6 @@ def player_numbers(team)
   num_array = []
   game_hash.each do |key, value|
     value.each do |stats|
-      num_array << stats[:number]
       binding.pry
     end
   end
