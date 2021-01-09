@@ -1,4 +1,5 @@
 # Write your code below game_hash
+require 'pry'
 def game_hash
   {
     home: {
@@ -126,4 +127,90 @@ def game_hash
   }
 end
 
-# Write code here
+
+def num_points_scored(name)
+  player_points = 0
+  game_hash.each do |key, value|
+    value[:players].each do |stat|
+      if stat[:player_name] == name
+        player_points += stat[:points]
+      end
+    end
+  end
+  return player_points
+end
+
+
+
+def shoe_size(name)
+  player_shoe_size = 0
+  game_hash.each do |key, value|
+    value[:players].each do |stat|
+      if stat[:player_name] == name
+        player_shoe_size += stat[:shoe]
+      end
+    end
+  end
+  return player_shoe_size
+end
+
+def team_colors(team)
+  game_hash.each do |key, value|
+    if value[:team_name] == team
+      return value[:colors]
+    end
+  end
+end
+
+def team_names
+  names = []
+  game_hash.each do |key, value|
+    names << value[:team_name]
+  end
+  names
+end
+
+def player_numbers(team)
+  num_array = []
+  game_hash.each do |key, value|
+    value[:players].each do |stats|
+      if team == value[:team_name]
+        num_array << stats[:number]
+      end
+    end
+  end
+  return num_array.sort
+end
+
+def player_stats(name)
+  game_hash.each do |key, value|
+    value[:players].each do |stats|
+      if name == stats[:player_name]
+        return stats
+      end
+    end
+  end
+end
+
+def big_shoe_rebounds
+  rebounds = 0
+  shoe_size = 0
+  
+  game_hash.each do |key, value|
+    value[:players].each do |stats|
+      
+      if stats[:shoe] > shoe_size
+        shoe_size = stats[:shoe] 
+        rebounds = stats[:rebounds]
+      end
+      
+    end
+  end
+  
+  return rebounds
+end
+
+
+
+
+
