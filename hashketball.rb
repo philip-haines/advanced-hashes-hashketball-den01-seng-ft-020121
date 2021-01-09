@@ -198,6 +198,7 @@ def big_shoe_rebounds
   game_hash.each do |key, value|
     value[:players].each do |stats|
       if stats[:shoe] > biggest_shoe_size
+        stats[:shoe] = biggest_shoe_size
         rebounds = stats[:rebounds]
       end
     end
