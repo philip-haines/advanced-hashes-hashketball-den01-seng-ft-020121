@@ -130,6 +130,8 @@ end
 
 def num_points_scored(name)
   game_hash
-  binding.pry
-  return sum
+  game_hash.each do |key, value|
+    binding.pry
+  end
 end
+
