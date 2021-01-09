@@ -174,7 +174,7 @@ def player_numbers(team)
   num_array = []
   game_hash.each do |key, value|
     value[:players].each do |stats|
-      stats[]
+      num_array << stats[:number]
     end
   end
   return num_array.sort
