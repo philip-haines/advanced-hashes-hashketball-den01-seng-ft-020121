@@ -129,7 +129,6 @@ end
 
 
 def num_points_scored(name)
-  game_hash
   player_points = 0
   game_hash.each do |key, value|
     value[:players].each do |stat|
@@ -144,7 +143,6 @@ end
 
 
 def shoe_size(name)
-  game_hash
   player_shoe_size = 0
   game_hash.each do |key, value|
     value[:players].each do |stat|
@@ -157,7 +155,6 @@ def shoe_size(name)
 end
 
 def team_colors(team)
-  game_hash
   game_hash.each do |key, value|
     if value[:team_name] == team
       return value[:colors]
@@ -166,7 +163,6 @@ def team_colors(team)
 end
 
 def team_names
-  game_hash
   names = []
   game_hash.each do |key, value|
     names << value[:team_name]
@@ -175,7 +171,13 @@ def team_names
 end
 
 def player_numbers(team)
-  
+  num_array = []
+  game_hash.each do |key, value|
+    value.each do |stats|
+      num_array << stats[:number]
+    end
+  end
+  return num_array.sort
 end
 
 
