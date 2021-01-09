@@ -182,6 +182,14 @@ def player_numbers(team)
   return num_array.sort
 end
 
+def player_stats(name)
+  game_hash.each do |key, value|
+    value[:players].each do |stats|
+      return stats
+    end
+  end
+end
+
 
 
 
