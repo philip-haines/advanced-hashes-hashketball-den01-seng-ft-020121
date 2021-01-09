@@ -168,7 +168,8 @@ end
 def team_names
   game_hash
   game_hash.each do |key, value|
-      return value[:team_name]
+    binding.pry
+    return value[:team_name]
   end
 end
 
