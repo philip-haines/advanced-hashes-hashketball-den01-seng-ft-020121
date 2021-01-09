@@ -158,10 +158,10 @@ end
 
 def team_colors(team)
   game_hash
+  team_colors = ""
   game_hash.each do |key, value|
-    key.each do |inner_key, inner_value|
-      binding.pry
-    end
+    team_colors + key[:colors]
+    binding.pry
   end
 end
 
