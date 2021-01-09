@@ -185,7 +185,9 @@ end
 def player_stats(name)
   game_hash.each do |key, value|
     value[:players].each do |stats|
-      return stats
+      if name == stats[:player_name]
+        return stats
+      end
     end
   end
 end
