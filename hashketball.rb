@@ -160,7 +160,6 @@ def team_colors(team)
   game_hash
   team_colors = ""
   game_hash.each do |key, value|
-    team_colors + key[:colors]
     binding.pry
   end
 end
